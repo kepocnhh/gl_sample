@@ -1,0 +1,11 @@
+[package]
+name = "gl_sample"
+description = "Rust application for testing the OpenGL engine."
+authors = ["Stanley Wintergreen <kepocnhh@gmail.com>"]
+readme = "README.md"
+license-file = "LICENSE"
+repository = "https://github.com/kepocnhh/gl_sample"
+version = "0.0.1"
+publish = false
+edition = "2021"
+rust-version = "1.83.0"
