@@ -11,4 +11,7 @@ edition = "2021"
 rust-version = "1.83.0"
 
 [dependencies]
-sdl2 = "0.37.0"
+gl = "0.14.0"
+
+[dependencies.glfw]
+version = "0.59.0"
