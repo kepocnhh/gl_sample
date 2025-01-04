@@ -1,5 +1,3 @@
-extern crate glfw;
-
 use glfw::{Action, Context, Key};
 
 fn main() {
@@ -9,7 +7,16 @@ fn main() {
     let (mut window, events) = glfw.create_window(w, h, "foobar", glfw::WindowMode::Windowed).unwrap();
     window.set_key_polling(true);
     window.make_current();
+    gl::load_with(|ptr| window.get_proc_address(ptr));
+    unsafe {
+        gl::ClearColor(0.0, 0.0, 0.0, 1.0);
+    }
     while !window.should_close() {
+        unsafe {
+            gl::Clear(gl::COLOR_BUFFER_BIT | gl::DEPTH_BUFFER_BIT);
+            gl::Enable(gl::BLEND);
+            gl::BlendFunc(gl::SRC_ALPHA, gl::ONE_MINUS_SRC_ALPHA);
+        }
         glfw.poll_events();
         for (_, event) in glfw::flush_messages(&events) {
             match event {

@@ -12,6 +12,4 @@ rust-version = "1.83.0"
 
 [dependencies]
 gl = "0.14.0"
-
-[dependencies.glfw]
-version = "0.59.0"
+glfw = "0.59.0"
